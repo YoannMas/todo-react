@@ -1,9 +1,13 @@
-import "./App.css";
+import "./App.scss";
+import Todo from "./Todo";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+library.add(faTrash);
 
 function App() {
   return (
-    <div>
-      Hello from <a href="https://www.lereacteur.io">Le Reacteur !</a>
+    <div className="App">
+      <Todo />
     </div>
   );
 }

@@ -1,0 +1,74 @@
+.todo {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tasks {
+  height: 400px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  width: 600px;
+  input {
+    transform: scale(1.5);
+    margin-right: 20px;
+  }
+  span {
+    font-size: 28px;
+    margin-right: 20px;
+  }
+  .icon {
+    transform: scale(1.5);
+    color: #5c48d3;
+  }
+}
+
+form {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 60px;
+  input {
+    box-sizing: border-box;
+    width: 550px;
+    height: 65px;
+    border: 1px solid #5c48d3;
+    border-radius: 10px;
+    margin-right: 70px;
+    background-color: #f2f7fd;
+    font-size: 24px;
+    font-family: inherit;
+    padding: 0 20px;
+    outline: none;
+  }
+  button {
+    width: 130px;
+    height: 65px;
+    background-color: #5c48d3;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 10px;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      background-color: #4c39b6;
+    }
+    &:active {
+      background-color: #fff;
+      color: #4c39b6;
+      border-color: #4c39b6;
+    }
+  }
+}
