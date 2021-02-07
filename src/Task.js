@@ -1,14 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Task = ({ task, setTask }) => {
+  // Run throught all the tasks
   return task.map((el, index) => {
     return (
       <div className="task" key={index}>
         <div>
           <input
             type="checkbox"
-            onClick={() => {
+            // When checkbox is clicked, change status to true or false
+            onClick={(event) => {
               if (el.status) {
+                console.log(event);
                 const taskTemp = [...task];
                 taskTemp[index].status = false;
                 setTask(taskTemp);
@@ -19,6 +22,7 @@ const Task = ({ task, setTask }) => {
               }
             }}
           />
+          {/* Toggle for striking the target task (if status is true or false) */}
           {el.status ? (
             <span>{el.title}</span>
           ) : (
@@ -30,6 +34,7 @@ const Task = ({ task, setTask }) => {
         <FontAwesomeIcon
           className="icon"
           icon="trash"
+          // remove the task
           onClick={() => {
             const taskTemp = [...task];
             taskTemp.splice(index, 1);

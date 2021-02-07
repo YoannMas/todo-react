@@ -7,14 +7,18 @@ const Todo = () => {
   return (
     <div className="todo">
       <div className="tasks">
+        {/* Render tasks */}
         <Task task={task} setTask={setTask} />
       </div>
       <form
         onSubmit={(event) => {
           event.preventDefault();
           const taskTemp = [...task];
+          // Add to task an object width the new task and a status (true: task not done, false task: done)
+          // When form is submitted
           taskTemp.push({ title: newTask, status: true });
           setTask(taskTemp);
+          // Clean the input
           setNewTask("");
         }}
       >
@@ -24,6 +28,7 @@ const Todo = () => {
           placeholder="new task"
           value={newTask}
           onChange={(event) => {
+            // Add the input value to newTask
             setNewTask(event.target.value);
           }}
         />
