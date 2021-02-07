@@ -8,16 +8,28 @@ const Task = ({ task, setTask }) => {
         <div>
           <input
             type="checkbox"
+            checked={el.checked}
             // When checkbox is clicked, change status to true or false
-            onClick={(event) => {
+            onChange={() => {
               if (el.status) {
-                console.log(event);
                 const taskTemp = [...task];
+                let taskTemp2 = [...task];
+                // Turn status to false
                 taskTemp[index].status = false;
+                // Turn check to true
+                taskTemp[index].checked = true;
+                // If task is checked, put it bellow unchecked task
+                taskTemp2 = taskTemp.splice(index, 1);
+                taskTemp.push(...taskTemp2);
                 setTask(taskTemp);
               } else {
                 const taskTemp = [...task];
+                let taskTemp2 = [...task];
                 taskTemp[index].status = true;
+                taskTemp[index].checked = false;
+                // If task is unchecked, put it above all tasks
+                taskTemp2 = taskTemp.splice(index, 1);
+                taskTemp.unshift(...taskTemp2);
                 setTask(taskTemp);
               }
             }}

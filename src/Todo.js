@@ -14,9 +14,9 @@ const Todo = () => {
         onSubmit={(event) => {
           event.preventDefault();
           const taskTemp = [...task];
-          // Add to task an object width the new task and a status (true: task not done, false task: done)
+          // Add to task an object width the new task and a status (true: task not done, false task: done, checked: false)
           // When form is submitted
-          taskTemp.push({ title: newTask, status: true });
+          taskTemp.push({ title: newTask, status: true, checked: false });
           setTask(taskTemp);
           // Clean the input
           setNewTask("");
